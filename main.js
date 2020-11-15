@@ -17,13 +17,13 @@ transform: translate(-50%, -50%);
 font-family: sans-serif;
 `;
 
-if (0 < hours && hours < 5) {
+if (0 <= hours && hours < 5) {
     day = 'Доброй ночи';
-} else if (5 < hours && hours < 12) {
+} else if (5 <= hours && hours < 12) {
     day = 'Доброе утро';
-} else if (12 < hours && hours < 17) {
+} else if (12 <= hours && hours < 17) {
     day = 'Добрый день';
-} else if (17 < hours) {
+} else if (17 <= hours) {
     day = 'Добрый вечер';
 }
 
