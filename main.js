@@ -6,7 +6,7 @@ let result = Math.floor((newYearDate.getTime() - date.getTime())/1000/60/60/24);
 let hours = date.getHours();
 let day;
 let dayWeek;
-let dateEng = date.toLocaleString('en').slice(-10);
+
 const elem = document.createElement('h2');
 document.body.append(elem);
 
@@ -43,5 +43,20 @@ if (date.getDay() === 1) {
     dayWeek = 'Воскресенье';
 }
 
-elem.textContent = `${day}. Сегодня: ${dayWeek} Текущее время: ${dateEng} До нового года осталось ${result} дней`;
+
+function getTimeRemaining(){
+    let dateNow = new Date();
+    let dateEng = dateNow.toLocaleString('en').slice(-10);
+    return{dateEng};
+}
+
+
+function updateClock(){
+    let timer = getTimeRemaining();
+    elem.textContent = `${day}. Сегодня: ${dayWeek} Текущее время: ${timer.dateEng} До нового года осталось ${result} дней`;
+}
+let timer = setInterval(updateClock, 1000);
+
+updateClock();
+
 
